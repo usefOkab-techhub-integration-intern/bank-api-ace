@@ -1,0 +1,48 @@
+Summary of selections: WSDL files generation
+
+The selected message set:
+/Customer_MsgSet/Customer_MsgSet
+
+The generated WSDL files will go into:
+/Customer_MsgSet
+
+The version of WSDL to be generated: 1.1
+The version of SOAP to be generated: 1.1
+
+The selected style for WSDL generation: document
+The WSDL Namespace: http://tempuri.org/Customer_MsgSet
+
+The following operations will be created:
+Operation1 (Request-Response)
+
+The following bindings are selected:
+SOAP over http.
+
+The following WSDL files will be generated:
+/Customer_MsgSet/Customer_MsgSetService.wsdl
+
+
+Creating new WSDL Service file '\Customer_MsgSet\Customer_MsgSetService.wsdl'
+Setting wsdl definition name for 'Customer_MsgSetService.wsdl': Customer_MsgSet
+Setting wsdl definition targetNamespace for 'Customer_MsgSetService.wsdl': http://tempuri.org/Customer_MsgSet
+Adding namespace: xmlns for 'Customer_MsgSetService.wsdl':soap=http://schemas.xmlsoap.org/wsdl/soap/
+Adding namespace: xmlns for 'Customer_MsgSetService.wsdl':xsd=http://www.w3.org/2001/XMLSchema
+Adding namespace: xmlns for 'Customer_MsgSetService.wsdl':wsdl=http://schemas.xmlsoap.org/wsdl/
+Creating new WSDL Interface file '\Customer_MsgSet\Customer_MsgSetService.wsdl'
+Creating portType for WSDL Interface: Customer_MsgSetPortType
+Creating portType operation 'Operation1'
+Creating message 'Operation1_in'
+Creating message 'Operation1_out'
+Creating message 'Operation1_fault1'
+Creating SOAP over HTTP binding 'Customer_MsgSetSOAP_HTTP_Binding'
+Creating binding operation 'Operation1' for binding 'Customer_MsgSetSOAP_HTTP_Binding'
+Creating SOAP over HTTP service 'CustomerService'
+Creating port 'CustomerService' for service 'CustomerService'
+
+Elapsed time processing this WSDL definition: 1.728135547398E9 seconds
+Number of warnings for this WSDL definition: 0
+
+
+Number of files processed: 1
+
+

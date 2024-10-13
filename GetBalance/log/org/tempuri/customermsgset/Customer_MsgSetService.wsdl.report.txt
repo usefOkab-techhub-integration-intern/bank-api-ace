@@ -1,0 +1,23 @@
+
+
+Importing file: C:\Users\arahm\IBM\ACET12\workspace\Customer_MsgSet\Customer_MsgSetService.wsdl
+
+The WSDL import will proceed with bindings Customer_MsgSetSOAP_HTTP_Binding.
+Creating wsdl schema document for file:///C:/Users/arahm/IBM/ACET12/workspace/Customer_MsgSet/Customer_MsgSetService.wsdl.
+Parsing wsdl binding {http://tempuri.org/Customer_MsgSet}Customer_MsgSetSOAP_HTTP_Binding.
+Parsing wsdl binding input Operation1.
+Parsing wsdl binding output Operation1.
+Parsing wsdl binding fault Operation1_Fault.
+Processing doc style for operation Operation1.
+Populating WSDL schema Customer_MsgSetService.xsd.
+Creating file Customer_MsgSetService.xsd in the workspace.
+Creating file Customer_MsgSetService_InlineSchema1.xsd in the workspace.
+Copying source WSDL Customer_MsgSetService.wsdl to Customer_MsgSetService.wsdl.
+
+Elapsed time processing this message definition file: 0.131 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

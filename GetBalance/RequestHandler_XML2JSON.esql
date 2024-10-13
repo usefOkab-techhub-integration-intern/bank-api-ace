@@ -1,0 +1,26 @@
+DECLARE cus NAMESPACE 'http://tempuri.org/Customer_MsgSet';
+
+CREATE COMPUTE MODULE RequestHnadler_XML2JSON
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		CALL CopyMessageHeaders();
+		CREATE LASTCHILD OF OutputRoot DOMAIN ('JSON');		
+		SET OutputRoot.JSON.Data.id = InputRoot.XMLNSC.cus:GetBalanceRequest.cus:id;
+		SET OutputRoot.JSON.Data.balanceIdx = InputRoot.XMLNSC.cus:GetBalanceRequest.balanceIdx;
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

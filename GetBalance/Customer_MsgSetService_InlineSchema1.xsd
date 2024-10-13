@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://tempuri.org/Customer_MsgSet" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:mrm="http://tempuri.org/Customer_MsgSet" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/Customer_MsgSet" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/Customer_MsgSet">
+        
+  <xsd:complexType name="GetBalanceRequest">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:id"/>
+                
+      <xsd:element name="balanceIdx" type="xsd:int"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:complexType name="GetBalanceResponse">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:id"/>
+                
+      <xsd:element name="balance" type="xsd:int"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:complexType name="Fault">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:faultCode"/>
+                
+      <xsd:element ref="mrm:faultString"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:element name="id" type="xsd:int"/>
+        
+  <xsd:element name="name" type="xsd:string"/>
+        
+  <xsd:element name="address" type="xsd:string"/>
+        
+  <xsd:element name="birthdate" type="xsd:date"/>
+        
+  <xsd:element name="balance1" type="xsd:decimal"/>
+        
+  <xsd:element name="balance2" type="xsd:decimal"/>
+        
+  <xsd:element name="balance3" type="xsd:decimal"/>
+        
+  <xsd:element name="balance4" type="xsd:decimal"/>
+        
+  <xsd:element name="balance5" type="xsd:decimal"/>
+        
+  <xsd:element name="faultCode" type="xsd:int"/>
+        
+  <xsd:element name="faultString" type="xsd:string"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="GetBalanceRequest" type="mrm:GetBalanceRequest"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="GetBalanceResponse" type="mrm:GetBalanceResponse"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="Fault" type="mrm:Fault"/>
+      
+</xsd:schema>

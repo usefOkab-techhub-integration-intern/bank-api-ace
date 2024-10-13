@@ -1,0 +1,7 @@
+
+
+Importing file: D:\JOE\getBalance.wsdl
+
+Parsing wsdl binding {http://example.com/balanceservice}BalanceServiceBinding.
+Parsing wsdl binding input GetBalance.
+Parsing wsdl binding output GetBalance.

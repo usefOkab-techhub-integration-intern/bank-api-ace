@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="GetBalanceRequest">
+    <xsd:sequence>
+      <xsd:element ref="id"/>
+      <xsd:element name="balanceIdx" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetBalanceResponse">
+    <xsd:sequence>
+      <xsd:element ref="id"/>
+      <xsd:element name="balance" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Fault">
+    <xsd:sequence>
+      <xsd:element ref="faultCode"/>
+      <xsd:element ref="faultString"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="id" type="xsd:int"/>
+  <xsd:element name="name" type="xsd:string"/>
+  <xsd:element name="address" type="xsd:string"/>
+  <xsd:element name="birthdate" type="xsd:date"/>
+  <xsd:element name="balance1" type="xsd:decimal"/>
+  <xsd:element name="balance2" type="xsd:decimal"/>
+  <xsd:element name="balance3" type="xsd:decimal"/>
+  <xsd:element name="balance4" type="xsd:decimal"/>
+  <xsd:element name="balance5" type="xsd:decimal"/>
+  <xsd:element name="faultCode" type="xsd:int"/>
+  <xsd:element name="faultString" type="xsd:string"/>
+  <xsd:element name="GetBalanceRequest" type="GetBalanceRequest">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <MRMessage messageDefinition="/0/GetBalanceRequest;XSDElementDeclaration=11$MRObject"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GetBalanceResponse" type="GetBalanceResponse">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <MRMessage messageDefinition="/0/GetBalanceResponse;XSDElementDeclaration=12$MRObject"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Fault" type="Fault">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <MRMessage messageDefinition="/0/Fault;XSDElementDeclaration=13$MRObject"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

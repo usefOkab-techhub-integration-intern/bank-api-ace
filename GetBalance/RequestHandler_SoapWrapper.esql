@@ -1,0 +1,38 @@
+
+
+CREATE COMPUTE MODULE RequestHandler_SoapWrapper
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- Copy the message headers to the output
+        CALL CopyMessageHeaders();
+        
+        -- Create the SOAP Envelope structure in OutputRoot
+        CREATE LASTCHILD OF OutputRoot DOMAIN('XMLNSC');
+        
+        -- Define namespaces
+        DECLARE soapEnv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+        -- Create the Envelope and Body elements
+        SET OutputRoot.XMLNSC.soapEnv:Envelope.soapEnv:Header = NULL;
+        SET OutputRoot.XMLNSC.soapEnv:Envelope.soapEnv:Body = NULL;
+        
+        -- Move the existing XMLNSC (GetBalanceRequest) into the SOAP Body
+        SET OutputRoot.XMLNSC.soapEnv:Envelope.soapEnv:Body.cus:GetBalanceResponse = InputRoot.XMLNSC.cus:GetBalanceResponse;
+        
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;
